@@ -1,0 +1,32 @@
+name: 'Leak Guard'
+description: 'Catch leaked secrets in a PR — API keys, private keys, committed .env files — before they merge.'
+author: 'Ivo Setyadi'
+branding:
+  icon: 'key'
+  color: 'red'
+
+inputs:
+  config:
+    description: 'Path to the Leak Guard config file.'
+    required: false
+    default: '.leakguard.yml'
+  fail-on:
+    description: 'Minimum severity that fails the check: error | warn | off.'
+    required: false
+    default: 'error'
+  comment:
+    description: 'Post findings as a PR comment (true/false).'
+    required: false
+    default: 'true'
+  token:
+    description: 'GitHub token used to read PR files and post comments. Defaults to the workflow token.'
+    required: false
+    default: ${{ github.token }}
+
+outputs:
+  findings:
+    description: 'JSON array of findings detected (secrets redacted).'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

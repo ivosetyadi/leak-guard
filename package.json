@@ -1,0 +1,13 @@
+{
+  "name": "leak-guard",
+  "version": "0.1.0",
+  "description": "Catch leaked secrets in a PR — API keys, private keys, committed .env files — before they merge.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "node test/run.js"
+  },
+  "keywords": ["github-action", "secrets", "security", "secret-scanning", "ci", "devsecops"],
+  "author": "Ivo Setyadi",
+  "license": "MIT",
+  "homepage": "https://ivosetyadi.github.io"
+}

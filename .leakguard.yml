@@ -1,0 +1,15 @@
+# Leak Guard configuration (optional). All rules run by default.
+
+fail-on: error        # error | warn | off
+
+# Skip files whose path contains any of these substrings.
+ignore:
+  - "test/fixtures/"
+
+# Disable specific rules by id (see README table).
+disable:
+  # - jwt
+
+# Allow specific matched values (e.g. documented dummy keys).
+allow:
+  # - EXAMPLE_DUMMY_KEY_000000000000000000
